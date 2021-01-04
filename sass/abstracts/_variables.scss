@@ -1,0 +1,39 @@
+// $color-white: #fff;
+// $color-black: #000;
+
+// $color-grey-light-1: #f7f7f7;
+// $color-grey-light-2: #eee;
+
+// $color-grey-dark: #777;
+// $color-grey-dark-2: #999;
+// $color-grey-dark-3: #333;
+
+//instead of using SASS variables we are going to use CSS "custom-properties/variables" 
+//SASS variables ---> it requires a preprocessor for its conveersion into actual value and this variables van only be used in the 
+//developement stage.This variables cannot be understood by the browser compiler/engine and so it cannot be used without conversion in 
+//the calc() function.
+//CSS custom properties ----> are understood by the browser engine and hence they can be used in the execution phase, the conversion 
+//is done by the browser itself and does not need any preprocessor!!
+//but while using it we do need to use it inside of var() to be able to tell the browser they are variables(custom-properties)
+//the custom properties are block scoped and so it can only be used by the css declaration and its childrens in which it is declared!!
+//and so to make it available to all the elements we are going to declare it in the ":root" psuedo class!!!
+
+:root {
+    --primary-color: #eb2f64;
+    --secondary-color: #FF3366;
+    --tertiary-color: #BA265D;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --box-shadow-large: 0 2rem 4rem rgba(0,0,0, 0.2);
+    --box-shadow-small: 0 .6rem 1rem rgba(0,0,0, 0.06);
+
+    --line: 1px solid var( --color-grey-light-4);
+}

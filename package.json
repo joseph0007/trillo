@@ -1,0 +1,25 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "Tillo project file package",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass__timeout__5": "for /l %g in () do @( node-sass sass/main.scss css/style.css & timeout /t 5 )",
+    "compile:sass": "node-sass sass/main.scss css/style.css",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver compile:sass__timeout__5",
+    "compile:css": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.min.css --output-style compressed",
+    "build": "npm-run-all compile:css prefix:css compress:css"
+  },
+  "author": "Joseph",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.5",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
+    "sass": "^1.26.10"
+  }
+}
